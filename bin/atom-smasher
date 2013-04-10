@@ -1,0 +1,17 @@
+#!/usr/bin/env jruby
+$: << File.expand_path('../../lib', __FILE__)
+require 'atom-smasher-jrubyfx'
+
+# Launch our application!
+
+Engine.start do |primaryStage|
+
+  gameWorld = AtomSmasher.new 60, "JavaFX 2 GameTutorial Part 2 - Game Loop"
+
+  # setup title, scene, stats, controls, and actors.
+  gameWorld.init primaryStage
+
+  # kick off the game loop
+  gameWorld.beginGameLoop
+
+end
